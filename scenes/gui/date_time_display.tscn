@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6eqsiip4iwn5"]
+
+[ext_resource type="Script" uid="uid://c3tioo4f32d31" path="res://src/gui/date_time_display.gd" id="1_vfck2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vfck2"]
+font_size = 20
+
+[node name="DateTimeDisplay" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "yyyy/mm/dd hh:mm"
+label_settings = SubResource("LabelSettings_vfck2")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_vfck2")

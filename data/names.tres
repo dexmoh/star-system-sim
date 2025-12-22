@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="NameBase" load_steps=2 format=3 uid="uid://rledmag3q0h5"]
+
+[ext_resource type="Script" uid="uid://cb1t3m0oc17p1" path="res://src/resources/namebase.gd" id="1_fpqlt"]
+
+[resource]
+script = ExtResource("1_fpqlt")
+system_names = Array[String](["AUGUSTUS", "TIBERIUS", "CALIGULA", "CLAUDIUS", "NERO", "GALBA", "OTHO", "VITELLIUS", "VESPASIAN", "TITUS", "DOMITIAN", "NERVA", "TRAJAN", "HADRIAN", "ANTONINUS", "MARCUS", "LUCIUS", "COMMODUS", "PERTINAX", "JULIANUS", "SEPTIMIUS", "CARACALLA", "GETA", "MACRINUS", "SEVERUS", "MAXIMINUS", "PHILIP", "CONSTANTINE", "JULIA", "JULIAN", "VAL", "MAGNUS", "THEO", "NEPOS", "ROMULUS", "LEO", "ZENO", "IRENE", "BASIL", "ZOE", "ISAAC", "MANUEL", "TERRY", "SYBIL", "CAMPBELL", "GWYN", "REI", "DEX", "VELOE", "SEPTIM", "GAMON", "THRALL", "DRAGON", "DAGON", "KHAL", "KHAAN", "CAPTAIN", "CHANCELLOR", "MARSHAL", "OPOSSUM", "STOAT", "GOOSE", "PLATYPUS", "BEAR", "MOTH", "GARGOYLE", "REX", "KIRA", "SOUL", "NITO", "SETH", "TAURI", "MERIDIAN", "JESSE", "WALTER", "PHANTOM", "ASHA", "CALDOR", "CAELION", "LUMI", "DURN", "KHEL", "BRAKKAR", "ASHKAR", "TRENN", "VOLKRIS", "SKARN", "KOVAR", "TORV", "ZHAR", "LAZARUS", "ELYRA", "CELESTE", "SERA", "SERAPH", "VALKYRIE", "NEMO", "OUD", "FINN", "ULF", "ASTRID", "QUD"])

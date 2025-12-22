@@ -1,0 +1,2 @@
+class_name PlanetGraphic
+extends CelestialObjectGraphic

@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvss72pd73mok"]
+
+[ext_resource type="Script" uid="uid://ct4sucr020qtx" path="res://src/star_system.gd" id="1_71j4m"]
+[ext_resource type="Shader" uid="uid://ruka5082fore" path="res://src/shaders/crt_effect.gdshader" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://b6eqsiip4iwn5" path="res://scenes/gui/date_time_display.tscn" id="3_71j4m"]
+[ext_resource type="Shader" uid="uid://cbb3nw8aqaj0t" path="res://src/shaders/vignette_effect.gdshader" id="3_k0juu"]
+[ext_resource type="PackedScene" uid="uid://bt2rabeqpcv4m" path="res://scenes/gui/zoom_factor_display.tscn" id="3_qfnet"]
+
+[sub_resource type="Environment" id="Environment_nnsk1"]
+background_mode = 3
+background_canvas_max_layer = 1
+tonemap_mode = 4
+glow_enabled = true
+glow_intensity = 2.31
+glow_strength = 1.2
+glow_blend_mode = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_71j4m"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfnet"]
+font_size = 20
+font_color = Color(0.91, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wyf3"]
+shader = ExtResource("2_rwgxs")
+shader_parameter/mask_type = 1
+shader_parameter/curve = 0.0
+shader_parameter/color_offset = 0.5
+shader_parameter/mask_brightness = 1.0
+shader_parameter/aspect = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71j4m"]
+shader = ExtResource("3_k0juu")
+shader_parameter/vignette_intensity = 0.7
+shader_parameter/vignette_opacity = 0.10000000475
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[node name="World" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nnsk1")
+
+[node name="StarSystem" type="Node2D" parent="."]
+script = ExtResource("1_71j4m")
+metadata/_custom_type_script = "uid://ct4sucr020qtx"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.5
+offset_right = 78.5
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+text = "ZOOM:"
+label_settings = SubResource("LabelSettings_71j4m")
+
+[node name="SystemZoomDisplay" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer" instance=ExtResource("3_qfnet")]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="DateTimeDisplay" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer" instance=ExtResource("3_71j4m")]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+text = "RT x 60"
+label_settings = SubResource("LabelSettings_qfnet")
+
+[node name="CRT" type="ColorRect" parent="CanvasLayer/Control"]
+material = SubResource("ShaderMaterial_4wyf3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Vignette" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
+material = SubResource("ShaderMaterial_71j4m")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

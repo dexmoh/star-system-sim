@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt2rabeqpcv4m"]
+
+[ext_resource type="Script" uid="uid://84xucej1b5iw" path="res://src/gui/system_zoom_display.gd" id="1_7clsx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7clsx"]
+font_size = 20
+
+[node name="SystemZoomDisplay" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x 1.0"
+label_settings = SubResource("LabelSettings_7clsx")
+script = ExtResource("1_7clsx")
