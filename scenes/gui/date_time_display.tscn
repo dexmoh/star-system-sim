@@ -1,15 +1,32 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6eqsiip4iwn5"]
 
+[ext_resource type="Theme" uid="uid://cllgjlac73e0t" path="res://data/main_gui_theme.tres" id="1_lg6f7"]
 [ext_resource type="Script" uid="uid://c3tioo4f32d31" path="res://src/gui/date_time_display.gd" id="1_vfck2"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_vfck2"]
-font_size = 20
+[node name="DateTimeDisplay" type="HBoxContainer"]
+offset_right = 266.0
+offset_bottom = 25.0
+theme = ExtResource("1_lg6f7")
+script = ExtResource("1_vfck2")
 
-[node name="DateTimeDisplay" type="Label"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "yyyy/mm/dd hh:mm"
-label_settings = SubResource("LabelSettings_vfck2")
+[node name="DateTimeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "YYYY/MM/DD HH:MM"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_vfck2")
+
+[node name="SlowDownBtn" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<<"
+
+[node name="ClockSpeedLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "TS-1"
+
+[node name="SpeedUpBtn" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = ">>"

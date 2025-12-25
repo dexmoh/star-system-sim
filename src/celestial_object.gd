@@ -61,12 +61,13 @@ func _ready():
 	else:
 		orbit_radius_au = -1.0
 		primary_body = null
+	
+	WorldTime.hour_passed.connect(_on_hour_passed)
 
-func _process(delta: float):
+func _on_hour_passed():
 	if primary_body:
-		# Test orbit rotation.
-		var deg_per_hr: float = 360/(orbital_period_days * float(DateTime.HRS_IN_DAY))
+		var deg_per_hr: float = 360 / (orbital_period_days * float(DateTime.HRS_IN_DAY))
 		if clockwise_orbit:
-			rotate(deg_to_rad(deg_per_hr * delta))
+			rotate(deg_to_rad(deg_per_hr))
 		else:
-			rotate(deg_to_rad(-deg_per_hr * delta))
+			rotate(deg_to_rad(-deg_per_hr))

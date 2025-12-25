@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cllgjlac73e0t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihmal"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcuj0"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ihmal"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+vertical = true
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_ihmal")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_jcuj0")
+VSeparator/styles/separator = SubResource("StyleBoxLine_ihmal")
